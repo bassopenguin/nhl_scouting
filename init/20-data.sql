@@ -1,4 +1,4 @@
-insert into scouting_schema.league(name) values
+insert into scouting_schema.league(league_name) values
 ('SHL'),
 ('Liiga'),
 ('OHL'),
