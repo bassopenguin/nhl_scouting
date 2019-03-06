@@ -10,3 +10,10 @@ For a long time now, I've wanted to explore GraphQL and this seems like a good e
 
 This project will create a database schema of Players and Scouts and use GraphQL (and probably React on the front-end) to manage scout assignments.
 The vision is that this database would hold information about scouting accuracy and allow the best performance in the draft by having complete scouting reports for the most players.
+
+## Usage
+
+- Build the psql image using `build-psql.sh`
+- Start the psql:latest container with `start-psql.sh` (on first run, this will cause the database to be created using the SQL scripts from ./init, if the volume doesn't exist, Docker should create it automatically)
+- Stop the psql container using `stop-psql.sh`
+- If needed, use `drop-create-volume.sh` to drop the existing data and re-create the volume _(this is useful for making the initialization scripts run again on psql startup)_
