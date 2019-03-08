@@ -45,7 +45,7 @@ SELECT
     scouting_schema.region_familiarity.familiarity AS region_familiarity
 FROM
     scouting_schema.scout_assignment
-    JOIN scouting_schema.region_familiarity ON scouting_schema.scout_assignment.scout_familiarity = scouting_schema.region_familiarity.id,
+    JOIN scouting_schema.region_familiarity ON scouting_schema.scout_assignment.scout_familiarity = scouting_schema.region_familiarity.id
     JOIN scouting_schema.scout ON scouting_schema.region_familiarity.scout_id = scouting_schema.scout.id
     JOIN scouting_schema.league ON scouting_schema.region_familiarity.league_id = scouting_schema.league.id
 ORDER BY
@@ -60,7 +60,7 @@ SELECT
     scouting_schema.scout_report.report_type
 FROM
     scouting_schema.scout_assignment
-    JOIN scouting_schema.player ON scouting_schema.scout_report.player_id = scouting_schema.player.id
     JOIN scouting_schema.scout_report ON scouting_schema.scout_report.assignment_number = scouting_schema.scout_assignment.id
+    JOIN scouting_schema.player ON scouting_schema.scout_report.player_id = scouting_schema.player.id
 ORDER BY
     scouting_schema.player.cs_rank;
