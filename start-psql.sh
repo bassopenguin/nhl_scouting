@@ -12,6 +12,7 @@ fi
 echo "starting psql"
 docker run \
 	--detach \
+	--env-file ./local.env \
 	--expose 5432 \
 	--name psql \
 	--network "$NETWORK" \
