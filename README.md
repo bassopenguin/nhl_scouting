@@ -15,5 +15,6 @@ The vision is that this database would hold information about scouting accuracy 
 
 - Build the psql image using `build-psql.sh`
 - Start the psql:latest container with `start-psql.sh` (on first run, this will cause the database to be created using the SQL scripts from ./init, if the volume doesn't exist, Docker should create it automatically)
-- Stop the psql container using `stop-psql.sh`
-- If needed, use `drop-create-volume.sh` to drop the existing data and re-create the volume _(this is useful for making the initialization scripts run again on psql startup)_
+- Start the pgql:rpi container with `start-pgql.sh postgres://username:password@host:port/database_name` **NOTE: the pgql:rpi image was built on the Raspberry Pi with the same Dockerfile from the graphile/postgraphile public image; it was needed when running on the ARM architecture**
+- Stop the psql container using `stop-all.sh`
+- **NOTE:** If needed, use `drop-create-volume.sh` to drop the existing data and re-create the volume _(this is useful for making the initialization scripts run again on psql startup)_
